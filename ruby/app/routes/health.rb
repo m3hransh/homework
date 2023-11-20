@@ -1,7 +1,6 @@
 class HealthRoutes < Sinatra::Base
-    
   get('/') do
-    if request.env['AUTHED'] == true
+    if request.env['HTTP_AUTHORIZATION']
       'App working OK'
     else
       status 403
