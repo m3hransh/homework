@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  dev-environment:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-dev-environment
+    ports:
+      - "2222:22"
+    volumes:
+      - /home/mehran/Projects/homework/bosh/ruby-app-release/:/root/app
+    command: /usr/sbin/sshd -D

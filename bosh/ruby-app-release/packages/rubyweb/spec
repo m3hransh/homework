@@ -5,4 +5,4 @@ files:
 - ruby-web-app/**/*
 
 dependencies:
-- ruby-2.7.8
+- ruby-2.7
