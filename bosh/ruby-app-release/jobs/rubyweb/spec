@@ -3,7 +3,7 @@ name: rubyweb
 
 templates:
   ctl.erb: bin/ctl
-  config.erb: config/config.yml
+  config.erb: cfg/config.yml
 
 packages:
 - ruby-2.7
@@ -14,4 +14,4 @@ properties:
     default: 8080
   bootstrap:
     description: "Specify the main file used to run the app"
-    default: ""
+    default: "app.rb"

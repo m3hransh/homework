@@ -6,9 +6,12 @@ RUN apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y \
   curl \
   build-essential \
+  bison \
+  autoconf \
   libssl-dev \
   libreadline-dev \
   zlib1g-dev \
+  libncurses5-dev \
   libyaml-dev \
   libsqlite3-dev \
   libxml2-dev \
@@ -16,13 +19,20 @@ RUN apt-get update && \
   openssl \
   libcurl4-openssl-dev \
   libffi-dev \
+  libpcap-dev \
+  libgdbm-dev \
+  libdb-dev \
   # zlibc \
   ruby-dev \
   sqlite3 \ 
   wget \
   git \
-  bash \
-  rbenv
+  bash 
+
+# install rbenv
+
+RUN curl -fsSL 'https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer' | bash 
+RUN 
 
 # Run SSH
 RUN apt-get install -y openssh-server && \
@@ -39,8 +49,8 @@ RUN apt-get install -y openssh-server && \
 # Install Ruby using rbenv
 RUN exec bash \
   && rbenv init \
-  && rbenv install 3.0.2 \
-  && rbenv global 3.0.2
+  && rbenv install 2.7.8 \
+  && rbenv global 2.7.8
 
 RUN gem install bundler
 
